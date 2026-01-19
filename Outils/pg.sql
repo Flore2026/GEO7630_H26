@@ -1,8 +1,6 @@
-CREATE DATABASE geo7630;
-\c geo7630
 CREATE EXTENSION postgis;
 CREATE EXTENSION postgis_raster;
-CREATE schema geo7630;
+CREATE schema geo7630h26;
 
 -----
 

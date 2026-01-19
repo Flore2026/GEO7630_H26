@@ -202,9 +202,9 @@ Astuce : Cliquez droit sur la flèche grise de sortie Rejected pour ajouter le L
 
 1. Enregistrer les résultats dans une base de données **PostGIS**.
 2. Paramètres de connexion :
-   - **Host** : `geo7630h25.cvwywmuc8u6v.us-east-1.rds.amazonaws.com`
+   - **Host** : `geo7630.c124ic8ew2kc.ca-central-1.rds.amazonaws.com`
    - **Port** : `5432`
-   - **Database** : `geo7630`
+   - **Database** : `geo7630h26`
    - **Schéma** : votre code permanent.
 3. Activer **Create GIST Index** et configurer le type spatial sur **Geometry**.
 

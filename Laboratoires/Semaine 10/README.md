@@ -1,4 +1,4 @@
-# Laboratoire 10 - GEO7630H25
+# Laboratoire 10 - geo7630h26
 ## Configuration Geoserver et mise en place de services VTS et WFS
 
 ### **Étape 1 : Configuration et lancement d’une instance de Geoserver**
@@ -21,7 +21,7 @@
    ```plaintext
    DB_USER=CODEPERMANENT
    DB_PASSWORD=VOTREMOTDEPASSE
-   DB_HOST=geo7630h25.cvwywmuc8u6v.us-east-1.rds.amazonaws.com
+   DB_HOST=geo7630.c124ic8ew2kc.ca-central-1.rds.amazonaws.com
    DB_NAME=geo7630
    ```
 

@@ -139,7 +139,7 @@ Rendu après quelques étapes
 ![](https://lh7-us.googleusercontent.com/DZ8WAB-zk0cH9rU96LVh8fG9B8hOvhWNaWlu9YLu0mVgpnBNhGuxFDM3S6BC5jcgHFdKGmqMK8c-hKREJXGvZQOP8NV-FLm6530uYhuxrif0BTL-GfVI6S3cLIUykklVXRPbliNC8ZUSfNz2oMusOf8)
 
 1. Connecter FME à **AGOL Writer**.
-2. Créer un **nouveau Feature Service** dans le **dossier "Geo7630h25"** précédemment crée.
+2. Créer un **nouveau Feature Service** dans le **dossier "geo7630h26"** précédemment crée.
 3. Activer **CREATE IF NEEDED** pour la mise à jour automatique.
 
 

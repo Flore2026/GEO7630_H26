@@ -93,7 +93,7 @@
 
   2. Spécifiez la connexion à votre base de données **Amazon**.
   
-   `geo7630h25.cvwywmuc8u6v.us-east-1.rds.amazonaws.com`
+   `geo7630.c124ic8ew2kc.ca-central-1.rds.amazonaws.com`
 
    ![Configurer la connexion PostgreSQL](images/image-21.png)
 
