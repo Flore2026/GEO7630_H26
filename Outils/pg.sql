@@ -15,7 +15,7 @@ BEGIN
         EXECUTE format('CREATE USER %I WITH PASSWORD %L', user_record, user_record);
 
         -- Créer un schéma avec le même nom que le code permanent, mais l'exécuter en tant qu'utilisateur superadmin
-        EXECUTE format('CREATE SCHEMA IF NOT EXISTS %I AUTHORIZATION captain_oski', user_record);
+        EXECUTE format('CREATE SCHEMA IF NOT EXISTS %I AUTHORIZATION %I', user_record);
 
         -- Créer une table dans le schéma avec les informations de l'utilisateur
         EXECUTE format('CREATE TABLE IF NOT EXISTS %I.%I (
@@ -53,10 +53,6 @@ SELECT create_user_and_schema(ARRAY[
     'ha091004',
     'ec790898',
     'cg290808'
-
-
-
-
 ]);
 
 
