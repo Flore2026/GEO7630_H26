@@ -16,7 +16,7 @@
 ## 📋 Contenu du cours
 
 ### **0. Présentation générale**
--  [Cours 2 ](https://docs.google.com/presentation/d/1NVrsOpGASzHzo9QjV9Od1x5ZFOM-ZfvzyyZoahcr2Sw/edit?usp=drive_link)
+-  [Cours 3 ](https://docs.google.com/presentation/d/1wDWhOzfkFDBwWpudgKC5ZHpyy_dENa02FUp357NFEjg/edit?usp=sharing)
 
 ### **1. Données vectorielles**
 - **Définition** : Points, lignes et polygones.
