@@ -1,7 +1,7 @@
 # 📚 GEO 7630 - TP2 : Intégration des données vectorielles et matricielles
 
 ## 🗓️ Date de remise
-- **À préciser**
+- **17 mars 2026**
 
 ## 🎯 Objectif du TP2
 L'objectif principal de ce travail est de vous familiariser avec l'outil de traitement et d'intégration **FME** (ETL/ELT) tout en préparant vos données pour les prochaines étapes de la session.
