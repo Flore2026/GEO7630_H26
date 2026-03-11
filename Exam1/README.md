@@ -30,7 +30,7 @@ Vous devrez **Créer une couche d’indexes polygonaux** représentant la quanti
 ---
  
 ## **🔍 Requis du TP**
-✅ Filtrer les commerces vacants **sur la propriété `VACANT`**.
+✅ Filtrer les commerces vacants **sur la propriété `VACANT`** dans le champs USAGE1 
 
 ✅ Créer des points à partir des données filtrées
 
