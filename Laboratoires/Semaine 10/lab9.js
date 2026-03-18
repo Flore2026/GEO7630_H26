@@ -12,7 +12,7 @@
 var map = new maplibregl.Map({
     container: 'map',
     style: 'https://api.maptiler.com/maps/streets/style.json?key=JhO9AmIPH59xnAn5GiSj',
-    center: [12.338, 45.4385],
+    center: [-73.55, 45.55],
     zoom: 17.4
 });
 
@@ -72,6 +72,20 @@ function handleFileSelect(evt) {
             'type': 'fill',
             'source': 'geojson-source'
         });
+		
+		map.addLayer({
+  'id': 'geojson-label',
+  'type': 'symbol',
+  'source': 'geojson-source',
+  'layout': {
+    'text-field': ['get', 'operator_id'],
+  },
+  'paint': {
+    'text-color': '#202',
+    'text-halo-color': '#fff',
+    'text-halo-width': 2
+  }
+})
     };
     // FIN DE LA FONCTION reader.onload
 
@@ -97,7 +111,40 @@ function colorPolygons () {
     // L'objet map expose une methode qui permet de changer les proprietes esthetiques d'un layer
     // setPaintProperty(identifiant du layer, propriete a changer, valeur de la propriete que vous voulez donner)
     // Documentation : https://docs.mapbox.com/mapbox-gl-js/api/map/#map#setpaintproperty
-    map.setPaintProperty("geojson", "fill-color", "red")
+    /*map.setPaintProperty("geojson", "fill-color", {
+  property: 'operator_id',
+  stops: [
+    [2, randomColor()],
+    [3, randomColor()],
+    [15, randomColor()],
+    [20, randomColor()],
+    [25, randomColor()],
+    [30, randomColor()]
+  ]
+})*/
+if (map.getLayer('garages-layer')) {
+        map.removeLayer('garages-layer');
+    }
+
+    map.addLayer({
+        'id': 'garages-layer',
+        'type': 'fill',
+        'source': 'geojson-source',
+        'paint': {
+            'fill-color': [
+                'match',
+                ['get', 'operator_id'],
+                2, randomColor(),
+                3, randomColor(),
+                15, randomColor(),
+                20, randomColor(),
+                25, randomColor(),
+                30, randomColor(),
+                '#000000'
+            ],
+            'fill-opacity': 0.8
+        }
+    });
 }
 
 // Ici on va initialiser l'evenement qui se passe lorsqu'on clique sur un bouton
