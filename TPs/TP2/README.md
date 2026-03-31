@@ -1,5 +1,7 @@
 # 📚 GEO 7630 - TP2 : Intégration des données vectorielles et matricielles
 
+# Note à moi même forcer l'utilisation de la version de FME dans la remise du TP2 car la rétroactivité est très mauvaise !!!
+
 ## 🗓️ Date de remise
 - **17 mars 2026**
 
