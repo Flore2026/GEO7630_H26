@@ -12,3 +12,7 @@
 Laboratoires/Lab 4/data/*
 Atlas/geoserver/data/*
 Atlas/geoserver_data/
+
+
+**/geoserver/data/*
+**/geoserver_data/
