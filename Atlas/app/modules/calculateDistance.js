@@ -40,13 +40,14 @@ function averageDistance(featureCollection) {
     return average;
   }
   
-  // Calcule la distance moyenne avec la fonction averageDistance et l'affiche dans l'élément HTML ayant l'ID 'distanceResult'
+  /**
+   * Calcule et affiche la distance moyenne entre les points aléatoires.
+   */
   function calculateDistance() {
     document.getElementById('distanceResult').value = Math.round(averageDistance(randomPoints), 2);
   }
   
-  // Binding de l'événement et de la fonctionnalité
-  // Ajoute un écouteur d'événements au bouton ayant l'ID 'calculateDistance' pour déclencher la fonction calculateDistance() lorsqu'il est cliqué
+  // Ajoute un écouteur d'événements au bouton de calcul de distance
   document
     .getElementById('calculateDistance')
     .addEventListener('click', calculateDistance); 

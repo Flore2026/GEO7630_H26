@@ -1,9 +1,9 @@
 /**
- * Cette fonction va permettre de faire la jointure spatiale entre points et polygones
- * @param {FeatureCollection} featureCollection - un set de points surlesquels on travaille
- * @returns {FeatureCollection} Une featureCollection de polygones enrichis des propriétés désirées
+ * Compte les points et enrichit chaque polygone avec le nombre de points qu'il contient.
+ * @param {FeatureCollection} points - Une collection de points à analyser.
+ * @param {FeatureCollection} polygons - Une collection de polygones à enrichir.
+ * @returns {FeatureCollection} Une FeatureCollection de polygones avec la propriété pointCount.
  */
-
 function countPointsInPolygons(points, polygons) {
     // Utilise la bibliothèque Turf pour collecter les points dans les polygones
     // La méthode collect retourne une nouvelle FeatureCollection contenant les polygones et les points collectés

@@ -1,16 +1,19 @@
 /**
- * Crée un buffer autour de la FeatureCollection fournie avec le rayon donné
- * @param {FeatureCollection} featureCollection - un set de points surlesquels on travaille
- * @returns {number} Le rayon du buffer
+ * Crée un buffer autour de la FeatureCollection fournie avec le rayon donné.
+ * @param {FeatureCollection} featureCollection - Un ensemble de points Turf à bufferiser.
+ * @param {number} radiusInput - Le rayon du buffer en mètres.
+ * @returns {FeatureCollection} Un GeoJSON représentant le buffer.
  */
 function createBuffer(featureCollection, radiusInput) {
     console.log(radiusInput)
-    // Utilisation de la method buffer de turf
+    // Utilisation de la méthode buffer de turf
     const buffer = turf.buffer(featureCollection, radiusInput, {units: 'meters'});
     return buffer;
   }
   
-  // Charge le buffer créé à partir des points aléatoires sur la carte Mapbox
+  /**
+   * Charge le buffer créé à partir des points aléatoires sur la carte Mapbox.
+   */
   function loadBuffer() {
     // Supprimer la couche et la source 'buffer' si elles existent
     if (map.getLayer('buffer')) {

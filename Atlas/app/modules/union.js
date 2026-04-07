@@ -1,4 +1,8 @@
 
+/**
+ * Crée une grille hexagonale et l'ajoute à la carte.
+ * @returns {void}
+ */
 function generateGrid () {
 
     // Supprimer la couche et la source 'grid' si elles existent
@@ -34,6 +38,10 @@ function generateGrid () {
     })
 }
 
+/**
+ * Calcule la jointure spatiale entre points et grille, puis affiche le résultat coloré.
+ * @returns {void}
+ */
 function union() {
     console.log('test')
         // Supprimer la couche et la source 'grid' si elles existent
@@ -75,6 +83,10 @@ function union() {
         })
     }
 
+/**
+ * Crée un buffer, le dissout et l'affiche sur la carte.
+ * @returns {void}
+ */
 function dissolver () {
      // Supprimer la couche et la source 'union' si elles existent
      if (map.getLayer('union')) {
@@ -108,28 +120,26 @@ function dissolver () {
 }
 
 /**
- * Cette fonction prend en entrée une FeatureCollection
- * et renvoie une Feature qui représente la fusion de toutes les Features dans la collection
- * Elle utilise la fonction Turf.js "dissolve" pour dissoudre les limites entre les features adjacentes.
- * @param {FeatureCollection} featureCollection - un set de points surlesquels on travaille
- * @returns {FeatureCollection} Une featureCollection de polygone dissous
+ * Dissout une FeatureCollection en une seule géométrie.
+ * @param {FeatureCollection} featureCollection - Une collection de géométries à dissoudre.
+ * @returns {FeatureCollection} Une collection de géométries dissoutes.
  */
 function unionFeatures(featureCollection) {
     const mergedFeature = turf.dissolve(featureCollection);
     return mergedFeature;
 }
 
-        // Ajoute un événement 'click' sur l'élément HTML avec l'id 'dissolve' pour charger le resultat sur la carte maplibre
+// Ajoute un événement click sur le bouton de génération de grille
 document
     .getElementById('gridder')
     .addEventListener('click', generateGrid);
 
-// Ajoute un événement 'click' sur l'élément HTML avec l'id 'union' pour charger le resultat sur la carte maplibre
+// Ajoute un événement click sur le bouton de jointure spatiale
 document
     .getElementById('union')
     .addEventListener('click', union);
 
-    // Ajoute un événement 'click' sur l'élément HTML avec l'id 'dissolve' pour charger le resultat sur la carte maplibre
+// Ajoute un événement click sur le bouton de dissolution
 document
     .getElementById('dissolve')
     .addEventListener('click', dissolver);

@@ -1,5 +1,7 @@
-// Cette fonction calcule la moyenne des points par grille
-// en fonction des couches de cartes rendues et met à jour l'élément HTML "kpi"
+/**
+ * Calcule la moyenne du nombre de points par cellule pour la couche 'joined'.
+ * @returns {void}
+ */
 function dynamicCount() {
     var averagePtsGrid = 0;
     var totalFeatures = 0;
@@ -18,8 +20,10 @@ function dynamicCount() {
     document.getElementById('kpi').value = average;
 }
 
-// Cette fonction compte le nombre de fonctionnalités 
-// dans la couche 'rdp' actuellement rendue sur la carte et met à jour l'élément HTML "featureCount"
+/**
+ * Met à jour le compteur de fonctionnalités affiché pour la couche 'rdp'.
+ * @returns {void}
+ */
 function featureCount() {
     var features = map.queryRenderedFeatures({ layers: ['rdp'] });
     document.getElementById('featureCount').value = features.length;

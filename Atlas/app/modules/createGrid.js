@@ -1,5 +1,8 @@
 
-// Cette fonction crée une grille hexagonale à partir d'une boîte englobante et y ajoute une propriété aléatoire à chaque hexagone.
+/**
+ * Crée une grille hexagonale sur une zone donnée.
+ * @returns {FeatureCollection} Une grille hexagonale GeoJSON avec une propriété randomValue ajoutée à chaque polygone.
+ */
 function makeGrid() {
     // Définit les coordonnées de la boîte englobante.
     var bbox = [-73.990959, 45.410154, -73.467327, 45.705839];

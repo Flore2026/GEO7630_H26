@@ -1,4 +1,7 @@
-// Fonction qui génère un nombre spécifié de points aléatoires dans les limites de l'île de Montréal
+/**
+ * Génère une collection de points aléatoires dans les limites de l'île de Montréal.
+ * @returns {FeatureCollection} Une collection GeoJSON de points aléatoires.
+ */
 function generateRandomPoints() {
     // Récupère le nombre de points à générer depuis l'élément 'randomInput' du document
     const numPoints = document.getElementById('randomInput').value; 
@@ -17,15 +20,16 @@ function generateRandomPoints() {
     // Retourne la collection de features TurfJS
     return featureCollection;
 }
- // Génère une collection de points aléatoires et la stocke dans une variable
-var randomPoints = generateRandomPoints(document.getElementById('randomInput').value);
 
+/**
+ * Charge une couche de points aléatoires sur la carte.
+ */
 function loadRandomPointsLayer() {
-     // Récupère une nouvelle collection de points aléatoires en fonction de la valeur de 'randomInput'
+    // Récupère une nouvelle collection de points aléatoires en fonction de la valeur de 'randomInput'
     randomPoints = generateRandomPoints(document.getElementById('randomInput').value);
     // Supprime toutes les couches et sources existantes de la carte
-    removeAllLayersAndSources()
-     // Ajoute la collection de points aléatoires en tant que source de données
+    removeAllLayersAndSources();
+    // Ajoute la collection de points aléatoires en tant que source de données
     map.addSource('rdp-source', {
         type: "geojson",
         data: randomPoints
