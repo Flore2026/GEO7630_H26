@@ -46,8 +46,8 @@ function generateClusters() {
      */
     map.addLayer({
         id: 'clusters',
-        type: 'circle',
-        source: 'clusters-source',
+        type: 'TODO_0',
+        source: 'TODO_0.1',
         filter: ['has', 'point_count'],
         paint: {
             'circle-color': [
@@ -106,6 +106,8 @@ function generateClusters() {
  * 
  * RÉPONSES (à utiliser pour vérifier) :
  * =====================================
+ * TODO_0: 'circle'
+ * TODO_0.1: 'clusters-source'
  * TODO_1: 'geojson'
  * TODO_2: randomPoints
  * TODO_3: true
