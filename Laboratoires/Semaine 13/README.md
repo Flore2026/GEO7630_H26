@@ -58,7 +58,7 @@ Vérifier que vous avez accès à la page web de l’Atlas en vous assurant que 
 Cela devrait ouvrir un nouvel onglet avec l’atlas
 
 
-## ![](https://lh7-us.googleusercontent.com/lU4mGX-EZ3Y-9pULQMf-X5i5GjRkPtD2JyYSagmeedqAPhLPNOqms6lRCpuCI_nt6zT5T7MOudo6hc7imIeteGkP0ye2uDKoTnqRMW4S5IAtV2Zg0Q23O-7LcfUecJTatwPiwvZfcJFkVMZZx256ENQ)
+![alt text](image.png)
 
 ### Objectif du laboratoire
 
@@ -82,20 +82,20 @@ Pour réussir ce laboratoire, procédez par étapes :
 
 ## Exercices du laboratoire
 
-Le dossier `Atlas/app/lab13/exercises` contient trois exercices et leurs solutions :
+Le dossier `Atlas/app/lab13/exercices` contient trois exercices et leurs solutions :
 
-- `Exercise1_Clusters.js`
-- `Exercise2_Extrusion.js`
-- `Exercise3_Heatmap.js`
-- `SOLUTION_Exercise1_Clusters.js`
-- `SOLUTION_Exercise2_Extrusion.js`
-- `SOLUTION_Exercise3_Heatmap.js`
+- `exercice1_Clusters.js`
+- `exercice2_Extrusion.js`
+- `exercice3_Heatmap.js`
+- `SOLUTION_exercice1_Clusters.js`
+- `SOLUTION_exercice2_Extrusion.js`
+- `SOLUTION_exercice3_Heatmap.js`
 
 Chaque fichier d’exercice contient des `TODO` à compléter. Les solutions sont fournies pour vérification.
 
 ### Exercice 1 : Clusters
-
-Ouvrez `Atlas/app/lab13/exercises/Exercise1_Clusters.js` et complétez les TODOs pour :
+![alt text](image-1.png)
+Ouvrez `Atlas/app/lab13/exercices/exercice1_Clusters.js` et complétez les TODOs pour :
 
 - configurer la source `clusters-source`
 - activer le clustering sur `randomPoints`
@@ -109,9 +109,11 @@ Ce travail permet de comprendre :
 - l’utilisation des expressions `step`
 - les filtres `['has', 'point_count']` et `['!', ['has', 'point_count']]`
 
-### Exercice 2 : Extrusion 3D
+### Exercice 2 : Extrusion 3D+
 
-Ouvrez `Atlas/app/lab13/exercises/Exercise2_Extrusion.js` et complétez les TODOs pour :
+![alt text](image-3.png)
+
+Ouvrez `Atlas/app/lab13/exercices/exercice2_Extrusion.js` et complétez les TODOs pour :
 
 - utiliser la source `union-source`
 - appliquer `fill-extrusion-color`
@@ -127,7 +129,9 @@ Ce travail permet de comprendre :
 
 ### Exercice 3 : Heatmap
 
-Ouvrez `Atlas/app/lab13/exercises/Exercise3_Heatmap.js` et complétez les TODOs pour :
+![alt text](image-2.png)
+
+Ouvrez `Atlas/app/lab13/exercices/exercice3_Heatmap.js` et complétez les TODOs pour :
 
 - ajouter la source `heatmap-source`
 - configurer `heatmap-weight`, `heatmap-intensity`, `heatmap-color`, `heatmap-radius` et `heatmap-opacity`
@@ -144,9 +148,9 @@ Ce travail permet de comprendre :
 
 Comparez votre code avec les fichiers solution :
 
-- `SOLUTION_Exercise1_Clusters.js`
-- `SOLUTION_Exercise2_Extrusion.js`
-- `SOLUTION_Exercise3_Heatmap.js`
+- `SOLUTION_exercice1_Clusters.js`
+- `SOLUTION_exercice2_Extrusion.js`
+- `SOLUTION_exercice3_Heatmap.js`
 
 Ces solutions permettent de valider vos réponses et de comprendre les bonnes pratiques.
 
@@ -156,4 +160,4 @@ Ces solutions permettent de valider vos réponses et de comprendre les bonnes pr
 - Ne modifiez pas les noms de sources ou de couches sans raison.
 - Vérifiez chaque erreur dans la console du navigateur.
 
-Beau travail ! Vous êtes maintenant en train de faire des exercices alignés avec les fichiers présents dans `app/lab13/exercises`. 💪
+Beau travail ! Vous êtes maintenant en train de faire des exercices alignés avec les fichiers présents dans `app/lab13/exercices`. 💪
