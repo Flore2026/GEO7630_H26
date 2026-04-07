@@ -19,7 +19,7 @@
 
 ![](https://lh7-us.googleusercontent.com/9hrK7pezwX-pzGLmZk1KeKrhZUb_SgBHdQHds4rMzoltbJVQ6efTsd_e2F9sfO2lJfS7KWsU0oe3WQMkTM81GydJ7ptuw4tGbQ24uHfYUjF-SErZkCS6DURfQLVDUGoRqSZ4yxyCnfj-yNXoDthbCY4)
 
-- Placez vous sur la branche “lab11”
+- Placez vous sur la branche “lab13”
 
 Pour vérifier sur quelle branche vous êtes : 
 
@@ -71,7 +71,7 @@ Ici le but du laboratoire est de vous familiariser avec les outils de développe
 
 Documentation : [Create and style clusters](https://maplibre.org/maplibre-gl-js/docs/examples/cluster/)
 
-1. Créez un nouveau module javascript \`renderClusters.js\` à la racine du dossier lab 11 
+1. Créez un nouveau module javascript \`renderClusters.js\` à la racine du dossier lab 13 
 
 2. Dans ce module ajoutez une nouvelle fonction :
 
@@ -100,7 +100,7 @@ Documentation : [Create and style clusters](https://maplibre.org/maplibre-gl-js/
 7. Le **\<button>** id du bouton se nomme : **\`'generateClusters'\`**
 
 8. N’oubliez pas d’ajouter la source du module javascript dans le fichier html **index.html**
-   9. Emplacement du module à mettre dans le fichier html : ./modules/lab11/renderClusters.js
+   9. Emplacement du module à mettre dans le fichier html : ./modules/lab13/renderClusters.js
 
 ![](https://lh7-us.googleusercontent.com/XOeK_u2rykBVa4gQSGvliXKpbRWz695z-T81T2FgvRd9qV_Rkc7wajqH_yx5h3qHEvhbMsLqY0rIylA00AjZ8T4UnUh1CwechKCDL1w5YMgkAJQczrGkNkw9PXAkiy01MdF__LukvHv9uQFhGQyB-_g)
 

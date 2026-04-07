@@ -1,44 +1,239 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carte MapLibre minimale</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <title>GEO7630</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.21.0/dist/maplibre-gl.css" />
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.21.0/dist/maplibre-gl.css" />
+  <link rel="stylesheet" type="text/css" href="./app.css" />
+  <link rel="stylesheet" type="text/css" href="./sidebar/sidebar.css" />
 
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    #map {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div id="map"></div>
-
-  <script src="https://unpkg.com/maplibre-gl@5.21.0/dist/maplibre-gl.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.21.0/dist/maplibre-gl.js"></script>
 
-  <script src="./app.js"></script>
+
+</head>
+
+<body>
+
+  <main>
+    <h1 class="visually-hidden">GEO7630H26 Atlas Urbain Interactif</h1>
+
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 12%; height: 100vh;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#geo-fill" />
+        </svg>
+        <span class="fs-4">Atlas Urbain Interactif</span>
+      </a>
+      <hr>
+      <!-- <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link active" aria-current="page" onclick="loadTeam('Accueil')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#home" />
+            </svg>
+            Accueil
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe1')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 1 : Titre
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe2')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 2 : Titre
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe3')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 3 : Titre
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe4')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 4 : Titre
+
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe5')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 5 : Titre
+
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe6')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 6 : Titre
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white" onclick="loadTeam('Equipe7')">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#people-circle" />
+            </svg>
+            Équipe 7 : Titre
+
+          </a>
+        </li>
+      </ul> -->
+
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://uqam.ca/wp-content/themes/uqam2019/assets/images/uqam-logo.svg" alt="" width="32"
+            height="32" class="rounded-circle me-2">
+          <strong>Menu</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" href="#">Github</a></li>
+          <li><a class="dropdown-item" href="#">A propos</a></li>
+          <li><a class="dropdown-item" href="#">Contacts</a></li>
+          <!-- <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li> -->
+        </ul>
+      </div>
+    </div>
+
+
+    <div id="bottomMenu" class="container-fluid bg-dark">
+      <div class="row" style="padding: 10px; height: 100%;">
+        <div class="col-4" style="height: 100%;">
+          <h5 class="card-title text-white">Partie 1</h5>
+          <div class="d-grid gap-2 mr-auto">
+            <div class="input-group">
+              <input type="text " id="randomInput" type="text" class="form-control col-6" placeholder="Max 10 000"
+                aria-describedby="basic-addon2" value=1000>
+              <button class="btn btn-warning col-6" type="button" id="generateRandomPoints"
+                onclick="generateRandomPoints()">Créer points</button>
+            </div>
+            <div class="input-group">
+              <button class="btn btn-info  col-6" type="button" id="calculateDistance">Calculer distance</button>
+              <input type="text" class="form-control col-6" disabled placeholder="0" id="distanceResult">
+            </div>
+
+          </div>
+        </div>
+        <div class="col-4" style="height: 100%;">
+          <h5 class="card-title text-white">Partie 2</h5>
+          <div class="d-grid gap-2 mr-auto">
+            <div class="input-group">
+              <button class="btn btn-info  col-6" type="button" id="buffer">Créer un buffer</button>
+              <input type="text" class="form-control col-6" id="radiusInput" placeholder="Entrez un radius">
+            </div>
+            <div class="input-group">
+              <button class="btn btn-warning col-12" type="button" id="dissolve"
+                onclick="dissolver()">Fusionner (Dissolve)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4" style="height: 100%;">
+
+          <h5 class="card-title text-white">Partie 3</h5>
+          <div class="d-grid gap-2 mr-auto">
+            <div class="input-group">
+              <button  id="gridder" class="btn btn-info col-8" type="button"> Générer grille </button>
+              <input type="text" class="form-control col-4" id="hexagonRadius" placeholder="Taille" value=500>
+            </div>
+            <div class="input-group">
+              <button class="btn btn-warning col-12" type="button" id="union">Joindre spatialement</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rightMenu" class="container-fluid bg-dark">
+      <div class="row" style="padding: 10px; height: 100%;">
+        <div class="col" style="height: 100%;">
+          <h5 class="card-title text-white">Laboratoire 13</h5>
+          <p class="card-text flex-grow-1 text-white">Ici le but du laboratoire est de vous familiariser avec les outils de développement (VS Code) et l’API Maplibre pour injecter des modules javascript de visualisation et de contrôle avancés de cartographie web. Avec les 2 derniers laboratoires vous avez donc pris en main ces outils, ici je ne fournirais pas de tutoriel exhaustif mais plutôt les grandes lignes des choses à faire pour que vous puissiez tester vous même votre montée en compétence.
+          </p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" id="generateClusters">Generate Clusters</button>
+            <button class="btn btn-primary" type="button" id="generateHeatmap">Generate Heatmap</button>
+            <button class="btn btn-primary" type="button" id="generate3D">Generate 2.5 Layer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <div id="map"></div>
+  <div class="map-overlay top">
+    <button class="btn btn-sm" type="button" id="resetMap">Reset map</button>
+    <button class="btn btn-sm" type="button" id="loadLayer">Load Layer</button>
+    <div class="map-overlay-inner">
+        <span class="" id="inputGroup-sizing-sm">Qté à l'écran</span>
+      <input id="featureCount" disabled placeholder="" type="text" class="" aria-label="Small"
+        aria-describedby="inputGroup-sizing-sm">
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <!-- ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+
+  <!-- ================================================== -->
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+  <!-- ================================================== -->
+
+  <!-- ================================================== -->
+
+  <script type='text/javascript' src="./modules/layerHandling.js"></script>
+  <script type='text/javascript' src="./modules/dynamicCounting.js"></script>
+  <script type='text/javascript' src="./modules/union.js"></script>
+  <script type='text/javascript' src="./modules/createRandomPoints.js"></script>
+  <script type='text/javascript' src="./modules/createGrid.js"></script>
+  <script type='text/javascript' src="./modules/calculateDistance.js"></script>
+  <script type='text/javascript' src="./modules/buffering.js"></script>
+  <script type='text/javascript' src="./modules/spatialUnion.js"></script>
+
+  <script type='text/javascript' src="./app.js"></script>
+  <!-- ================================================== -->
 
 </body>
 </html>
