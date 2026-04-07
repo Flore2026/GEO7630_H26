@@ -83,14 +83,28 @@ function generateClusters() {
         source: 'clusters-source',
         filter: ['!', ['has', 'point_count']],
         paint: {
-            'circle-color': 'TODO_16',          // Quelle couleur ?
+            'circle-color': '#11b4da',          // Quelle couleur ?
             'circle-radius': 'TODO_17',         // Quel rayon en pixels ?
             'circle-stroke-width': 'TODO_18',   // Quelle épaisseur ?
             'circle-stroke-color': 'TODO_19'    // Quelle couleur de contour ?
         }
     });
+
+    map.addLayer({
+            id: 'cluster-count',
+            type: 'symbol',
+            source: 'clusters-source',
+            filter: ['has', 'point_count'],
+            layout: {
+                'text-field': '{point_count_abbreviated}',
+                'text-font': ['Noto Sans Regular'],
+                'text-size': 12
+            }
+        });
+
     registerLayerControl('unclustered-point', 'Points non clusterisés');
 }
+
 
 /**
  * INDICE pour les seuils 'step' :

@@ -99,7 +99,7 @@ function generateExtrusion() {
  * TODO_11: '*'
  * TODO_12: 'get'
  * TODO_13: 'pointCount'
- * TODO_14: 100
+ * TODO_14: 1000
  * TODO_16: 0
  * TODO_17: 0.6
  */

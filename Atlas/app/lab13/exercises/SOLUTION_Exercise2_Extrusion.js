@@ -35,7 +35,7 @@ function generateExtrusion() {
                     5, '#ce6693',
                     10, '#a059a0'
                 ],
-                'fill-extrusion-height': ['*', ['get', 'pointCount'], 100],
+                'fill-extrusion-height': ['*', ['get', 'pointCount'], 1000],
                 'fill-extrusion-base': 0,
                 'fill-extrusion-opacity': 0.6
             }

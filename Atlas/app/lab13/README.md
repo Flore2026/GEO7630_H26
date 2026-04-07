@@ -88,8 +88,6 @@ Crée une visualisation 2.5D/3D avec des polygones extrudés pour montrer des do
    - Opacité : 60%
 
 3. **Interpolation en fonction du zoom**
-   - À zoom 15 : hauteur = 0 (aplati)
-   - À zoom 15.05+ : hauteur = valeur réelle
    - Crée un effet d'extrusion progressive au zoom
 
 ### Propriétés requises dans les données
