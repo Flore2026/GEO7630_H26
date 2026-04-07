@@ -45,8 +45,8 @@ function generateGrid () {
  * @returns {void}
  */
 function union() {
-    console.log('test')
-        // Supprimer la couche et la source 'grid' si elles existent
+
+    // Supprimer la couche et la source 'grid' si elles existent
         if (map.getLayer('grid')) {
             map.removeLayer('grid');
         }
@@ -64,6 +64,7 @@ function union() {
         const hexgrid = turf.hexGrid(bbox, cellSide, options);
         // Compter le nombre de points dans chaque cellule de la grille
         const joined = countPointsInPolygons(randomPoints, hexgrid)
+
         map.addSource('grid-source', {
             type: "geojson",
             data: joined

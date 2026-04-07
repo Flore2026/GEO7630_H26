@@ -1,123 +1,105 @@
 /**
  * EXERCICE 2 - Extrusion 3D
  * ========================
- * Objectif : Créer une visualisation 2.5D avec extrusion de polygones
+ * Objectif : Transformer une grille de densité en volume 3D
  * 
  * Complétez les zones marquées par "TODO:" pour faire fonctionner le code.
- * Les TODOs demandent des niveaux de zoom, des propriétés, et des expressions d'interpolation.
+ * Cet exercice vous apprend à utiliser :
+ * - fill-extrusion
+ * - expressions MapLibre
+ * - propriétés de source ('pointCount')
+ * - interpolation de zoom pour créer un effet pop-up
  * 
  * Difficulté : ⭐⭐⭐ Moyen/Difficile
- * Concepts : interpolation zoom, fill-extrusion, propriétés dynamiques
+ * Concepts : fill-extrusion, interpolation, expression ['get'], zoom
  */
 
 function generateExtrusion() {
-    // Vérifier si l'union existe
-    if (!map.getLayer('union')) {
-        dissolver();
+    // Vérifie que la source de grille existe. Si elle est absente, la jointure doit être créée avant.
+    if (!map.getSource('grid-source')) {
+        console.warn('Source grid-source manquante : exécutez d\'abord la jointure spatiale pour créer la grille.');
     }
-    
+
     /**
-     * TODO 1 : Configurer la couche d'extrusion 3D
-     * =============================================
-     * Vous devez remplir :
-     * 1. La couleur de base : bleu #627BC1
-     * 2. Les hauteurs d'extrusion avec interpolation au zoom
-     * 3. Les bases d'extrusion avec interpolation au zoom
-     * 4. L'opacité
-     * 
-     * IMPORTANT : L'extrusion utilise une interpolation entre 2 niveaux de zoom :
-     * - Zoom 15.00 : hauteur = 0 (le polygone est PLAT)
-     * - Zoom 15.05 : hauteur = valeur réelle (l'extrusion est VISIBLE)
-     * 
-     * Cela crée un effet "pop-up" au zoom 15.05
+     * TODO 1 : Ajouter la couche d'extrusion 3D
+     * ========================================
+     * Utilise la source 'grid-source' et la propriété 'pointCount'
+     * pour construire des volumes 3D qui montent en fonction du nombre de points.
      */
     if (!map.getLayer('extrusion')) {
         map.addLayer({
             id: 'extrusion',
-            type: 'fill-extrusion',     // Type 3D
-            source: 'union-source',     // Source d'données fusionnées
+            type: 'TODO_1',            // Type de couche 3D
+            source: 'TODO_2',          // Source de données de la grille
             paint: {
                 /**
-                 * TODO 1a : Couleur de l'extrusion
-                 * Quelle couleur en hexadécimal ?
+                 * TODO 1a : Couleur de l'extrusion selon la densité
+                 * Utilisez une expression 'interpolate' sur ['get', 'pointCount']
+                 * pour passer d'une couleur claire à une couleur foncée.
                  */
-                'fill-extrusion-color': 'TODO_1',
-                
+                'fill-extrusion-color': [
+                    'TODO_3',              // Expression d'interpolation
+                    ['TODO_4'],            // Type biologique (linéaire)
+                    ['TODO_5'],            // Entrée : propriété pointCount
+                    0, 'TODO_6',           // 0 points -> couleur claire
+                    1, 'TODO_7',           // 1 point -> couleur intermédiaire
+                    3, 'TODO_8',           // 3 points -> couleur plus chaude
+                    5, 'TODO_9',           // 5 points -> couleur forte
+                    10, 'TODO_10'          // 10 points -> couleur la plus sombre
+                ],
+
                 /**
-                 * TODO 1b : Hauteur de l'extrusion interpolée selon le zoom
-                 * ======================================================
-                 * Expression 'interpolate' : ['interpolate', ['linear'], ['zoom'], zoom1, hauteur1, zoom2, hauteur2]
-                 * 
-                 * Vous devez :
-                 * - Utiliser 'interpolate' pour l'expression
-                 * - Utiliser ['linear'] pour le type d'interpolation
-                 * - Utiliser ['zoom'] comme valeur d'entrée
-                 * - Zoom 15: hauteur = 0
-                 * - Zoom 15.05: hauteur = ['get', 'extrusion-height']
+                 * TODO 1b : Hauteur de l'extrusion
+                 * Utilisez la propriété 'pointCount' et multipliez-la
+                 * par une constante pour produire une hauteur visible.
                  */
                 'fill-extrusion-height': [
-                    'TODO_2',              // 'interpolate' ?
-                    ['TODO_3'],            // Type d'interpolation ?
-                    ['TODO_4'],            // Entrée ?
-                    15, 'TODO_5',          // Zoom 15 -> hauteur 0
-                    15.05, 'TODO_6'        // Zoom 15.05 -> hauteur réelle
+                    'TODO_11',             // Expression arithmétique
+                    ['TODO_12', 'TODO_13'],// Propriété pointCount
+                    'TODO_14'              // Facteur de multiplication
                 ],
-                
+
                 /**
-                 * TODO 1c : Base de l'extrusion (point de départ)
-                 * ================================================
-                 * Même logique que fill-extrusion-height mais pour la base
-                 * - Zoom 15: base = 0
-                 * - Zoom 15.05: base = ['get', 'extrusion-base']
+                 * TODO 1c : Base d'extrusion
+                 * La base reste au sol pour commencer à 0.
                  */
-                'fill-extrusion-base': [
-                    'TODO_7',              // Expression ?
-                    ['TODO_8'],            // Type ?
-                    ['TODO_9'],            // Entrée ?
-                    'TODO_10', 'TODO_11',  // Zoom 15 -> 0
-                    'TODO_12', 'TODO_13'   // Zoom 15.05 -> prop réelle
-                ],
-                
+                'fill-extrusion-base': 'TODO_16',
+
                 /**
-                 * TODO 1d : Opacité de l'extrusion
-                 * Valeur entre 0 (transparent) et 1 (opaque)
-                 * Suggéré : 0.6 pour voir les superpositions
+                 * TODO 1d : Opacité
+                 * Gardez un peu de transparence pour voir les superpositions.
                  */
-                'fill-extrusion-opacity': 'TODO_14'
+                'fill-extrusion-opacity': 'TODO_17'
             }
-        }, 'water');
+        });
         registerLayerControl('extrusion', '2.5D extrusion');
     }
 }
 
 /**
- * CONCEPT CLÉ : Pourquoi cette interpolation entre 15 et 15.05 ?
- * ===============================================================
- * 
- * Les cartes 2.5D/3D avec extrusion supplémentaire au petits zooms
- * créent une parallaxe confuse. L'effet "pop-up" règle ce problème :
- * 
- * Visualisation :
- * Zoom 14.9 : [Polygone PLAT] ← hauteur=0
- * Zoom 15.0 : [Polygone PLAT] ← hauteur=0 (pas encore d'extrusion)
- * Zoom 15.02: [Polygone TRANSITION] ← hauteur=50% (interpolation)
- * Zoom 15.05: [Polygone 3D] ← hauteur=100% (extrusion visible)
- * Zoom 15.1 : [Polygone 3D] ← hauteur=200 units (pleine hauteur)
+ * NOTES D'APPRENTISSAGE :
+ * - 'fill-extrusion' transforme une surface en volume 3D.
+ * - 'fill-extrusion-color' peut être une expression pour afficher la densité.
+ * - 'fill-extrusion-height' accepte des expressions mathématiques.
+ * - 'fill-extrusion-base' permet de contrôler la hauteur de départ.
+ * - 'pointCount' est produit par la jointure spatiale sur la grille.
  * 
  * RÉPONSES (à utiliser pour vérifier) :
  * =====================================
- * TODO_1: '#627BC1'
- * TODO_2: 'interpolate'
- * TODO_3: 'linear'
- * TODO_4: 'zoom'
- * TODO_5: 0
- * TODO_6: ['get', 'extrusion-height']
- * TODO_7: 'interpolate'
- * TODO_8: 'linear'
- * TODO_9: 'zoom'
- * TODO_10: 15
- * TODO_11: 0
- * TODO_12: 15.05
- * TODO_13: ['get', 'extrusion-base']
- * TODO_14: 0.6
+ * TODO_1: 'fill-extrusion'
+ * TODO_2: 'grid-source'
+ * TODO_3: 'interpolate'
+ * TODO_4: 'linear'
+ * TODO_5: ['get', 'pointCount']
+ * TODO_6: 'rgba(243, 231, 155, 1)'
+ * TODO_7: '#fac484'
+ * TODO_8: '#eb7f86'
+ * TODO_9: '#ce6693'
+ * TODO_10: '#a059a0'
+ * TODO_11: '*'
+ * TODO_12: 'get'
+ * TODO_13: 'pointCount'
+ * TODO_14: 100
+ * TODO_16: 0
+ * TODO_17: 0.6
  */
