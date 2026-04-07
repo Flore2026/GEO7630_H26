@@ -128,7 +128,7 @@ Documentation : [Display buildings in 3D - MapLibre GL JS](https://maplibre.org/
 
 1. Créez un nouveau module javascript **\`render3D.js\`**
 
-2. Créez une fonction **\`function generate3D()\`**
+2. Créez une fonction **\`function generateExtrusion()\`**
 
 3. Ajoutez y une variable pour fabriquer un grid hexagonal : 
 
