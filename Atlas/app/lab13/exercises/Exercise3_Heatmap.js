@@ -148,44 +148,4 @@ function generateHeatmap() {
  * - Représente la concentration de points
  * - 0 = pas de points, 1 = concentration maximale
  * - Permet les dégradés de couleur réalistes
- * 
- * RÉPONSES (à utiliser pour vérifier) :
- * =====================================
- * TODO_1: 'interpolate'
- * TODO_2: 'linear'
- * TODO_3: 'zoom'
- * TODO_4: 0
- * TODO_5: 1
- * TODO_6: 'interpolate'
- * TODO_7: 'linear'
- * TODO_8: 'zoom'
- * TODO_9: 0
- * TODO_10: 0
- * TODO_11: 22
- * TODO_12: 1.2
- * TODO_13: 'interpolate'
- * TODO_14: 'linear'
- * TODO_15: 'heatmap-density'
- * TODO_16: 'rgba(0, 0, 255, 0)'
- * TODO_17: 'royalblue'
- * TODO_18: 'cyan'
- * TODO_19: 0.5
- * TODO_20: 'lime'
- * TODO_21: 0.7
- * TODO_22: 'yellow'
- * TODO_23: 'red'
- * TODO_24: 'interpolate'
- * TODO_25: 'linear'
- * TODO_26: 'zoom'
- * TODO_27: 0
- * TODO_28: 2
- * TODO_29: 22
- * TODO_30: 20
- * TODO_31: 'interpolate'
- * TODO_32: 'linear'
- * TODO_33: 'zoom'
- * TODO_34: 7
- * TODO_35: 1
- * TODO_36: 9
- * TODO_37: 0.8
  */

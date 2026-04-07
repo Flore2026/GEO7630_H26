@@ -83,23 +83,4 @@ function generateExtrusion() {
  * - 'fill-extrusion-height' accepte des expressions mathématiques.
  * - 'fill-extrusion-base' permet de contrôler la hauteur de départ.
  * - 'pointCount' est produit par la jointure spatiale sur la grille.
- * 
- * RÉPONSES (à utiliser pour vérifier) :
- * =====================================
- * TODO_1: 'fill-extrusion'
- * TODO_2: 'grid-source'
- * TODO_3: 'interpolate'
- * TODO_4: 'linear'
- * TODO_5: ['get', 'pointCount']
- * TODO_6: 'rgba(243, 231, 155, 1)'
- * TODO_7: '#fac484'
- * TODO_8: '#eb7f86'
- * TODO_9: '#ce6693'
- * TODO_10: '#a059a0'
- * TODO_11: '*'
- * TODO_12: 'get'
- * TODO_13: 'pointCount'
- * TODO_14: 1000
- * TODO_16: 0
- * TODO_17: 0.6
  */
