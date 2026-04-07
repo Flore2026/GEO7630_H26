@@ -58,7 +58,7 @@ Vérifier que vous avez accès à la page web de l’Atlas en vous assurant que 
 Cela devrait ouvrir un nouvel onglet avec l’atlas
 
 
-## ![](https://lh7-us.googleusercontent.com/lU4mGX-EZ3Y-9pULQMf-X5i5GjRkPtD2JyYSagmeedqAPhLPNOqms6lRCpuCI_nt6zT5T7MOudo6hc7imIeteGkP0ye2uDKoTnqRMW4S5IAtV2Zg0Q23O-7LcfUecJTatwPiwvZfcJFkVMZZx256ENQ)
+![alt text](image.png)
 
 ### Objectif du laboratoire
 
@@ -94,7 +94,7 @@ Le dossier `Atlas/app/lab13/exercises` contient trois exercices et leurs solutio
 Chaque fichier d’exercice contient des `TODO` à compléter. Les solutions sont fournies pour vérification.
 
 ### Exercice 1 : Clusters
-
+![alt text](image-1.png)
 Ouvrez `Atlas/app/lab13/exercises/Exercise1_Clusters.js` et complétez les TODOs pour :
 
 - configurer la source `clusters-source`
@@ -109,7 +109,9 @@ Ce travail permet de comprendre :
 - l’utilisation des expressions `step`
 - les filtres `['has', 'point_count']` et `['!', ['has', 'point_count']]`
 
-### Exercice 2 : Extrusion 3D
+### Exercice 2 : Extrusion 3D+
+
+![alt text](image-3.png)
 
 Ouvrez `Atlas/app/lab13/exercises/Exercise2_Extrusion.js` et complétez les TODOs pour :
 
@@ -126,6 +128,8 @@ Ce travail permet de comprendre :
 - la liaison entre propriétés de données et styles MapLibre
 
 ### Exercice 3 : Heatmap
+
+![alt text](image-2.png)
 
 Ouvrez `Atlas/app/lab13/exercises/Exercise3_Heatmap.js` et complétez les TODOs pour :
 
