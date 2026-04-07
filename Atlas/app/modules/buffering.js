@@ -12,6 +12,14 @@ function createBuffer(featureCollection, radiusInput) {
   
   // Charge le buffer créé à partir des points aléatoires sur la carte Mapbox
   function loadBuffer() {
+    // Supprimer la couche et la source 'buffer' si elles existent
+    if (map.getLayer('buffer')) {
+      map.removeLayer('buffer');
+    }
+    if (map.getSource('buffer-source')) {
+      map.removeSource('buffer-source');
+    }
+
     // Récupère la valeur du rayon entrée par l'utilisateur
     const radiusInput = document.getElementById('radiusInput').value
     // Crée le buffer à partir des points aléatoires et du rayon entré

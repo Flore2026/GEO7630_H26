@@ -1,6 +1,14 @@
 
 function generateGrid () {
 
+    // Supprimer la couche et la source 'grid' si elles existent
+    if (map.getLayer('grid')) {
+        map.removeLayer('grid');
+    }
+    if (map.getSource('grid-source')) {
+        map.removeSource('grid-source');
+    }
+
     // Définir les coordonnées de la zone d'étude
     const bbox = [-73.990959, 45.410154, -73.467327, 45.705839];
     // Définir la taille des cellules
@@ -28,6 +36,14 @@ function generateGrid () {
 
 function union() {
     console.log('test')
+        // Supprimer la couche et la source 'grid' si elles existent
+        if (map.getLayer('grid')) {
+            map.removeLayer('grid');
+        }
+        if (map.getSource('grid-source')) {
+            map.removeSource('grid-source');
+        }
+
         // Définir les coordonnées de la zone d'étude
         const bbox = [-73.990959, 45.410154, -73.467327, 45.705839];
         // Définir la taille des cellules
@@ -60,6 +76,14 @@ function union() {
     }
 
 function dissolver () {
+     // Supprimer la couche et la source 'union' si elles existent
+     if (map.getLayer('union')) {
+         map.removeLayer('union');
+     }
+     if (map.getSource('union-source')) {
+         map.removeSource('union-source');
+     }
+
      // Récupérer le rayon sélectionné par l'utilisateur
      const radiusInput = document.getElementById('radiusInput').value
      // Créer un buffer pour chaque point généré aléatoirement
