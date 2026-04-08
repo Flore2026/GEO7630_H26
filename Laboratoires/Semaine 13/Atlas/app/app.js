@@ -23,6 +23,10 @@ function updateFeatureCountOnMove() {
 map.on('load', function() {
     map.on('moveend', updateFeatureCountOnMove);
     updateFeatureCountOnMove();
+
+    getRandomPoint(map)
+
+    addvectorTileLayer(map)
 });
 
 // Ajouter les event listeners pour les boutons de visualisation avancée
