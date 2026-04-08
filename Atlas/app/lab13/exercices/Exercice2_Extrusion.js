@@ -29,8 +29,8 @@ function generateExtrusion() {
     if (!map.getLayer('extrusion')) {
         map.addLayer({
             id: 'extrusion',
-            type: 'TODO_1',            // Type de couche 3D
-            source: 'TODO_2',          // Source de données de la grille
+            type: 'fill-extrusion',            // Type de couche 3D
+            source: 'grid-source',          // Source de données de la grille
             paint: {
                 /**
                  * TODO 1a : Couleur de l'extrusion selon la densité
@@ -38,14 +38,14 @@ function generateExtrusion() {
                  * pour passer d'une couleur claire à une couleur foncée.
                  */
                 'fill-extrusion-color': [
-                    'TODO_3',              // Expression d'interpolation
-                    ['TODO_4'],            // Type biologique (linéaire)
-                    ['TODO_5'],            // Entrée : propriété pointCount
-                    0, 'TODO_6',           // 0 points -> couleur claire
-                    1, 'TODO_7',           // 1 point -> couleur intermédiaire
-                    3, 'TODO_8',           // 3 points -> couleur plus chaude
-                    5, 'TODO_9',           // 5 points -> couleur forte
-                    10, 'TODO_10'          // 10 points -> couleur la plus sombre
+                    'interpolate',              // Expression d'interpolation
+                    ['linear'],            // Type biologique (linéaire)
+                    ['get', 'pointCount'],            // Entrée : propriété pointCount
+                    0, '#a7e0e286',           // 0 points -> couleur claire
+                    1, '#359c9c',           // 1 point -> couleur intermédiaire
+                    3, '#b3be17',           // 3 points -> couleur plus chaude
+                    5, '#a02f39',           // 5 points -> couleur forte
+                    10, '#291804'          // 10 points -> couleur la plus sombre
                 ],
 
                 /**
@@ -54,22 +54,22 @@ function generateExtrusion() {
                  * par une constante pour produire une hauteur visible.
                  */
                 'fill-extrusion-height': [
-                    'TODO_11',             // Expression arithmétique
-                    ['TODO_12', 'TODO_13'],// Propriété pointCount
-                    'TODO_14'              // Facteur de multiplication
+                    '*',             // Expression arithmétique
+                    ['get', 'pointCount'],// Propriété pointCount
+                    1000              // Facteur de multiplication
                 ],
 
                 /**
                  * TODO 1c : Base d'extrusion
                  * La base reste au sol pour commencer à 0.
                  */
-                'fill-extrusion-base': 'TODO_16',
+                'fill-extrusion-base': 0,
 
                 /**
                  * TODO 1d : Opacité
                  * Gardez un peu de transparence pour voir les superpositions.
                  */
-                'fill-extrusion-opacity': 'TODO_17'
+                'fill-extrusion-opacity': 0.5
             }
         });
         registerLayerControl('extrusion', '2.5D extrusion');

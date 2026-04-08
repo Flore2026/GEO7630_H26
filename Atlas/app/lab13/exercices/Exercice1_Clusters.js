@@ -25,11 +25,11 @@ function generateClusters() {
      * - clusterRadius: rayon en pixels pour grouper les points (50)
      */
     map.addSource('clusters-source', {
-        type: 'TODO_1', // Quel type de source ?
-        data: 'TODO_2', // Quelle variable de données ?
-        cluster: 'TODO_3', // true ou false ?
-        clusterMaxZoom: 'TODO_4', // Quel zoom max ?
-        clusterRadius: 'TODO_5' // Quel rayon en pixels ?
+        type: 'geojson', // Quel type de source ?
+        data: randomPoints, // Quelle variable de données ?
+        cluster: true, // true ou false ?
+        clusterMaxZoom: 14, // Quel zoom max ?
+        clusterRadius: 50 // Quel rayon en pixels ?
     });
     
     /**
@@ -47,22 +47,22 @@ function generateClusters() {
     map.addLayer({
         id: 'clusters',
         type: 'circle',
-        source: 'TODO_0.1',
+        source: 'clusters-source',
         filter: ['has', 'point_count'],
         paint: {
             'circle-color': [
                 'step',
                 ['get', 'point_count'],
-                'TODO_6',    // Couleur par défaut (0-99 points) - Cyan
-                'TODO_7', 'TODO_8',      // À partir de X points - Couleur jaune
-                'TODO_9', 'TODO_10'      // À partir de X points - Couleur rose
+                '#51bbd6',    // Couleur par défaut (0-99 points) - Cyan
+                100, '#f1f075',      // À partir de X points - Couleur jaune
+                750, '#f28cb1'      // À partir de X points - Couleur rose
             ],
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
-                'TODO_11',   // Rayon par défaut (0-99 points)
-                'TODO_12', 'TODO_13',    // À partir de X points - Rayon 30
-                'TODO_14', 'TODO_15'     // À partir de X points - Rayon 40
+                20,   // Rayon par défaut (0-99 points)
+                20, 30,    // À partir de X points - Rayon 30
+                30, 40     // À partir de X points - Rayon 40
             ]
         }
     });
@@ -84,9 +84,9 @@ function generateClusters() {
         filter: ['!', ['has', 'point_count']],
         paint: {
             'circle-color': '#11b4da',          // Quelle couleur ?
-            'circle-radius': 'TODO_17',         // Quel rayon en pixels ?
-            'circle-stroke-width': 'TODO_18',   // Quelle épaisseur ?
-            'circle-stroke-color': 'TODO_19'    // Quelle couleur de contour ?
+            'circle-radius': 4,         // Quel rayon en pixels ?
+            'circle-stroke-width': 1,   // Quelle épaisseur ?
+            'circle-stroke-color': '#fff'    // Quelle couleur de contour ?
         }
     });
 

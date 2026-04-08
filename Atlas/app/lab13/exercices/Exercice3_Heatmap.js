@@ -49,11 +49,11 @@ function generateHeatmap() {
              * Complétez l'expression :
              */
             'heatmap-weight': [
-                'TODO_1',           // Type d'expression ?
-                ['TODO_2'],         // Type d'interpolation ?
-                ['TODO_3'],         // Entrée (zoom) ?
-                0, 'TODO_4',        // Zoom 0 -> poids ?
-                22, 'TODO_5'        // Zoom 22 -> poids ?
+                'interpolate',           // Type d'expression ?
+                ['linear'],         // Type d'interpolation ?
+                ['zoom'],         // Entrée (zoom) ?
+                0, 0,        // Zoom 0 -> poids ?
+                22, 1        // Zoom 22 -> poids ?
             ],
             
             /**
@@ -64,11 +64,11 @@ function generateHeatmap() {
              * - Zoom 22 : intensité = 1.2 (contraste accru)
              */
             'heatmap-intensity': [
-                'TODO_6',           // Expression ?
-                ['TODO_7'],         // Type ?
-                ['TODO_8'],         // Entrée ?
-                'TODO_9', 'TODO_10', // Zoom 0 -> 0
-                'TODO_11', 'TODO_12' // Zoom 22 -> 1.2
+                'interpolate',           // Expression ?
+                ['linear'],         // Type ?
+                ['zoom'],         // Entrée ?
+                0, 0, // Zoom 0 -> 0
+                22, 1.2 // Zoom 22 -> 1.2
             ],
             
             /**
@@ -87,15 +87,15 @@ function generateHeatmap() {
              * - 1.0 densité : 'red' [rouge]
              */
             'heatmap-color': [
-                'TODO_13',                      // Expression ?
-                ['TODO_14'],                    // Type ?
-                ['TODO_15'],                    // Entrée (densité!) ?
-                0, 'TODO_16',                   // 0% -> transparent
-                0.1, 'TODO_17',                 // 10% -> bleu royal
-                0.3, 'TODO_18',                 // 30% -> cyan
-                'TODO_19', 'TODO_20',           // 50% -> vert citron
-                'TODO_21', 'TODO_22',           // 70% -> jaune
-                1, 'TODO_23'                    // 100% -> rouge
+                'interpolate',                      // Expression ?
+                ['linear'],                    // Type ?
+                ['heatmap-density'],                    // Entrée (densité!) ?
+                0, 'rgba(0, 0, 255, 0) ',                   // 0% -> transparent
+                0.1, 'royalblue',                 // 10% -> bleu royal
+                0.3, 'cyan',                 // 30% -> cyan
+                0.5, 'lime',           // 50% -> vert citron
+                0.7, 'yellow',           // 70% -> jaune
+                1, 'red'                    // 100% -> rouge
             ],
             
             /**
@@ -107,11 +107,11 @@ function generateHeatmap() {
              * - Zoom 22 : rayon = 20 pixels (points dispersés)
              */
             'heatmap-radius': [
-                'TODO_24',          // Expression ?
-                ['TODO_25'],        // Type ?
-                ['TODO_26'],        // Entrée ?
-                'TODO_27', 'TODO_28', // Zoom 0 -> 2
-                'TODO_29', 'TODO_30'  // Zoom 22 -> 20
+                'interpolate',          // Expression ?
+                ['linear'],        // Type ?
+                ['zoom'],        // Entrée ?
+                0, 2, // Zoom 0 -> 2
+                22, 20  // Zoom 22 -> 20
             ],
             
             /**
@@ -124,11 +124,11 @@ function generateHeatmap() {
              * Cela réduit le "bruit" au zoom très élevé
              */
             'heatmap-opacity': [
-                'TODO_31',          // Expression ?
-                ['TODO_32'],        // Type ?
-                ['TODO_33'],        // Entrée ?
-                'TODO_34', 'TODO_35', // Zoom 7 -> 1.0
-                'TODO_36', 'TODO_37'  // Zoom 9 -> 0.8
+                'interpolate',          // Expression ?
+                ['linear'],        // Type ?
+                ['zoom'],        // Entrée ?
+                7, 1, // Zoom 7 -> 1.0
+                9, 0.8  // Zoom 9 -> 0.8
             ]
         }
     });
